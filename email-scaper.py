@@ -65,7 +65,7 @@ emails.update(new_emails)
 #SPIDER
 #beatifulsoup looks for anchor tags
 
-supu = BeautifulSoup(response.text)
+supu = BeautifulSoup(response.text, "html.parser")
 for anchor in supu.find_all("a"):
    if "href" in anchor.attrs:
         link = anchor.attrs["href"]
